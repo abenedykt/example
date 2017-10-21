@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using Food.Abstract;
 
 namespace Food
@@ -16,8 +17,28 @@ namespace Food
             var menu = factory.GetMenu();
             ShowMenu(menu.Items);
 
+            var basket = factory.CreateBasket();
 
+            basket.Add(menu.GetItem(0));
+            basket.Add(menu.GetItem(2));
 
+            var veryfier = factory.GetVerifier();
+            if (veryfier.Verify(basket))
+            {
+                Console.WriteLine("można zamówić :)");
+
+                //factory.Order().Send(order);
+            }
+            else
+            {
+                Console.WriteLine("popraw zamówienie");
+            }
+
+        }
+
+        class CosDoSkladaniaZamowienia
+        {
+            // tutaj wyswieltnie na ekran tego co zostało zamówione :) 
         }
 
         private static void ShowMenu(IEnumerable<IMenuItem> items)
@@ -30,14 +51,6 @@ namespace Food
     }
 
     //internal class NoVegeFactory : AbstractFactory
-    //{
-    //    public override IMenu GetMenu()
-    //    {
-    //        throw new NotImplementedException();
-    //    }
-    //}
-
-    //internal class LudoviskoFactory : AbstractFactory
     //{
     //    public override IMenu GetMenu()
     //    {

@@ -1,6 +1,7 @@
 using Food.Abstract;
 using Food.Default;
 using Food.Kantyna;
+using Food.Ludovisko;
 
 namespace Food
 {
@@ -12,8 +13,8 @@ namespace Food
             {
                 case "kantyna":
                     return new KantynaFactory();
-                //case "ludovisko":
-                //    return new LudoviskoFactory();
+                case "ludovisko":
+                    return new LudoviskoFactory();
                 //case "novege":
                 //    return new NoVegeFactory();
             }

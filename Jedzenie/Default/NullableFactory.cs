@@ -8,5 +8,10 @@ namespace Food.Default
         {
             return new EmptyMenu();
         }
+
+        public override IBasketVerifier GetVerifier()
+        {
+            return new EmptyVeryfier();
+        }
     }
 }

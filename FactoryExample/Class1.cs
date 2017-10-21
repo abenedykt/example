@@ -58,7 +58,7 @@
 
     public class Example
     {
-        public void Example()
+        public void ExampleMethod()
         {
             var klient1 = new Klient();
 

@@ -2,9 +2,9 @@ using Food.Abstract;
 
 namespace Food.Kantyna
 {
-    public class KanynaMenuItem : IMenuItem
+    public class KantynaMenuItem : IMenuItem
     {
-        public KanynaMenuItem(int number, string name)
+        public KantynaMenuItem(int number, string name)
         {
             Number = number;
             Name = name;
