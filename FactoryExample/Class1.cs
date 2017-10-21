@@ -3,45 +3,45 @@
 
     public class Factory
     {
-        public Klient CreateClient()
-        {
-            return new Klient();
-        }
+        //public Klient CreateClient()
+        //{
+        //    return new Klient();
+        //}
 
-        public Zamowienie CreateZamowienie()
-        {
-            return new Zamowienie(new Klient());
-        }
+        //public Zamowienie CreateZamowienie()
+        //{
+        //    return new Zamowienie(new Klient());
+        //}
 
 
-        public Word CreateWord()
-        {
-            return new Document
-            {
-                new Page
-                {
-                    new Paragraph
-                    {
-                        new Line(),
-                        new Line(),
-                        new Line(),
-                        new Line(),
-                        new Line(),
-                    }
-                },
-                new Page
-                {
-                    new Paragraph
-                    {
-                        new Line(),
-                        new Line(),
-                        new Line(),
-                        new Line(),
-                        new Line(),
-                    }
-                }
-            }
-        }
+        //public Word CreateWord()
+        //{
+        //    return new Document
+        //    {
+        //        new Page
+        //        {
+        //            new Paragraph
+        //            {
+        //                new Line(),
+        //                new Line(),
+        //                new Line(),
+        //                new Line(),
+        //                new Line(),
+        //            }
+        //        },
+        //        new Page
+        //        {
+        //            new Paragraph
+        //            {
+        //                new Line(),
+        //                new Line(),
+        //                new Line(),
+        //                new Line(),
+        //                new Line(),
+        //            }
+        //        }
+        //    }
+        //}
     }
 
     public class Klient
