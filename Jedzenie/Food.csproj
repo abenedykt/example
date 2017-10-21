@@ -42,6 +42,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\AbstractFactory.cs" />
+    <Compile Include="Default\EmptyMenu.cs" />
+    <Compile Include="FlighweightFactory.cs" />
+    <Compile Include="Abstract\IMenu.cs" />
+    <Compile Include="Abstract\IMenuItem.cs" />
+    <Compile Include="Kantyna\KantynaFactory.cs" />
+    <Compile Include="Kantyna\KanynaMenuItem.cs" />
+    <Compile Include="Default\NullableFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
