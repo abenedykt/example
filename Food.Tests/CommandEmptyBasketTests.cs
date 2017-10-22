@@ -1,4 +1,4 @@
-﻿using Food.Abstract;
+using Food.Abstract;
 using Food.Commands;
 using NSubstitute;
 using Xunit;
@@ -18,15 +18,4 @@ namespace Food.Tests
             basket.Received(1).Clear();
         }
     }
-
-    public class CommandAddMenuItemTests
-    {
-        [Fact]
-        public void TestName()
-        {
-            //var command = 
-        }
-    }
-
-
 }
