@@ -47,6 +47,9 @@
     <Compile Include="Abstract\IBasket.cs" />
     <Compile Include="Abstract\IBasketVerifier.cs" />
     <Compile Include="Abstract\IOrderer.cs" />
+    <Compile Include="Commands\CommandAddMenuItem.cs" />
+    <Compile Include="Commands\CommandEmptyBasket.cs" />
+    <Compile Include="Commands\CommandExecutor.cs" />
     <Compile Include="Default\EmptyMenu.cs" />
     <Compile Include="Default\EmptyMenuItem.cs" />
     <Compile Include="Default\EmptyVeryfier.cs" />
@@ -54,6 +57,7 @@
     <Compile Include="FlighweightFactory.cs" />
     <Compile Include="Abstract\IMenu.cs" />
     <Compile Include="Abstract\IMenuItem.cs" />
+    <Compile Include="Abstract\ICommand.cs" />
     <Compile Include="Kantyna\KantynaBasketVerifier.cs" />
     <Compile Include="Kantyna\KantynaFactory.cs" />
     <Compile Include="Kantyna\KantynaMenuItem.cs" />

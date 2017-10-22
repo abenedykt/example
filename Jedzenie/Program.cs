@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Food.Abstract;
+using Food.Commands;
 
 namespace Food
 {
@@ -47,50 +48,5 @@ namespace Food
                 Console.WriteLine(item);
             }
         }
-    }
-
-    internal class CommandEmptyBasket : ICommand
-    {
-        private readonly IBasket _basket;
-
-        public CommandEmptyBasket(IBasket basket)
-        {
-            _basket = basket;
-        }
-
-        public void Execute()
-        {
-            _basket.Clear();
-        }
-    }
-
-    internal class CommandAddMenuItem : ICommand
-    {
-        private readonly IBasket _basket;
-        private readonly IMenuItem _menuItem;
-
-        public CommandAddMenuItem(IBasket basket, IMenuItem menuItem)
-        {
-            _basket = basket;
-            _menuItem = menuItem;
-        }
-
-        public void Execute()
-        {
-            _basket.Add(_menuItem);
-        }
-    }
-
-    internal class CommandExecutor
-    {
-        public void Execute(ICommand command)
-        {
-            command.Execute();
-        }
-    }
-
-    interface ICommand
-    {
-        void Execute();
     }
 }
