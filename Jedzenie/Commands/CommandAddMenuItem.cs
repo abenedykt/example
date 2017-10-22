@@ -18,4 +18,16 @@ namespace Food.Commands
             _basket.Add(_menuItem);
         }
     }
+
+    internal class CommndSaveOrder : ICommand
+    {
+        public CommndSaveOrder(IRepository repository)
+        {
+            
+        }
+        public void Execute()
+        {
+            
+        }
+    }
 }

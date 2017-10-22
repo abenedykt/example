@@ -54,6 +54,7 @@
     <Compile Include="Commands\CommandAddMenuItem.cs" />
     <Compile Include="Commands\CommandEmptyBasket.cs" />
     <Compile Include="Commands\CommandExecutor.cs" />
+    <Compile Include="Commands\IRepository.cs" />
     <Compile Include="Default\EmptyMenu.cs" />
     <Compile Include="Default\EmptyMenuItem.cs" />
     <Compile Include="Default\EmptyVeryfier.cs" />
