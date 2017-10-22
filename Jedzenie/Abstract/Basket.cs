@@ -17,5 +17,9 @@ namespace Food.Abstract
         }
 
         public IList<IMenuItem> Items => _items;
+        public void Clear()
+        {
+            Items.Clear();
+        }
     }
 }

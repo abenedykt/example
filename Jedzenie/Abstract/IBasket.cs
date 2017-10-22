@@ -8,5 +8,6 @@ namespace Food.Abstract
         // Remove
         // Edit
         IList<IMenuItem> Items { get; }
+        void Clear();
     }
 }
