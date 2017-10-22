@@ -1,6 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using Food.Abstract;
 using Food.Default;
 
@@ -18,6 +16,11 @@ namespace Food.Kantyna
             return new MixedVeryfier();
         }
 
+        public override IOrderer GetOrderer()
+        {
+            return new KantynaOrderer();
+        }
+
         private class KantynaExampleMenu : IMenu
         {
             public List<IMenuItem> Items => new List<IMenuItem>
@@ -29,7 +32,7 @@ namespace Food.Kantyna
 
             public IMenuItem GetItem(int number)
             {
-                if (number > 0 && number < Items.Count)
+                if (number >= 0 && number < Items.Count)
                     return Items[number];
 
                 return new EmptyMenuItem();
@@ -52,7 +55,7 @@ namespace Food.Kantyna
     {
         public bool Verify(IBasket basket)
         {
-//            var slices = basket.Items.Sum();
+            // var slices = basket.Items.Sum();
 
             //var groups = slices.GroupBy(s => s.Name)
             //    .Sum(g => g.Count)

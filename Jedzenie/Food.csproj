@@ -43,9 +43,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\AbstractFactory.cs" />
+    <Compile Include="Abstract\Basket.cs" />
+    <Compile Include="Abstract\IBasket.cs" />
+    <Compile Include="Abstract\IBasketVerifier.cs" />
+    <Compile Include="Abstract\IOrderer.cs" />
     <Compile Include="Default\EmptyMenu.cs" />
     <Compile Include="Default\EmptyMenuItem.cs" />
     <Compile Include="Default\EmptyVeryfier.cs" />
+    <Compile Include="Default\Orderer.cs" />
     <Compile Include="FlighweightFactory.cs" />
     <Compile Include="Abstract\IMenu.cs" />
     <Compile Include="Abstract\IMenuItem.cs" />
@@ -53,6 +58,7 @@
     <Compile Include="Kantyna\KantynaFactory.cs" />
     <Compile Include="Kantyna\KantynaMenuItem.cs" />
     <Compile Include="Default\NullableFactory.cs" />
+    <Compile Include="Kantyna\KantynaOrderer.cs" />
     <Compile Include="Ludovisko\LudoviskoBasketVeryfier.cs" />
     <Compile Include="Ludovisko\LudoviskoFactory.cs" />
     <Compile Include="Ludovisko\LudoviskoMenu.cs" />

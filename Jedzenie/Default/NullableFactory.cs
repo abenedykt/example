@@ -13,5 +13,10 @@ namespace Food.Default
         {
             return new EmptyVeryfier();
         }
+
+        public override IOrderer GetOrderer()
+        {
+            return Orderer.Empty();
+        }
     }
 }

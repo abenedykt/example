@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
 using Food.Abstract;
 
 namespace Food
 {
     static class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Console.WriteLine("Gdzie jemy?");
             var place = Console.ReadLine();
@@ -27,18 +26,13 @@ namespace Food
             {
                 Console.WriteLine("można zamówić :)");
 
-                //factory.Order().Send(order);
+                factory.GetOrderer().Order(basket);
             }
             else
             {
                 Console.WriteLine("popraw zamówienie");
             }
 
-        }
-
-        class CosDoSkladaniaZamowienia
-        {
-            // tutaj wyswieltnie na ekran tego co zostało zamówione :) 
         }
 
         private static void ShowMenu(IEnumerable<IMenuItem> items)
