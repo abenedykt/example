@@ -26,13 +26,15 @@ namespace Food
             executor.Execute(new CommandAddMenuItem(basket, menu.GetItem(0)));
             executor.Execute(new CommandAddMenuItem(basket, menu.GetItem(2)));
 
+            ;
+
 
             var veryfier = factory.GetVerifier();
             if (veryfier.Verify(basket))
             {
                 Console.WriteLine("można zamówić :)");
 
-                factory.GetOrderer().Order(basket);
+                executor.Execute(new CommandOrder(factory.GetOrderer(), basket));
             }
             else
             {
@@ -47,6 +49,23 @@ namespace Food
             {
                 Console.WriteLine(item);
             }
+        }
+    }
+
+    internal class CommandOrder : ICommand
+    {
+        private readonly IOrderer _order;
+        private readonly IBasket _basket;
+
+        public CommandOrder(IOrderer order, IBasket basket)
+        {
+            _order = order;
+            _basket = basket;
+        }
+
+        public void Execute()
+        {
+            _order.Order(_basket);
         }
     }
 }

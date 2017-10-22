@@ -33,7 +33,8 @@ namespace Food.Ludovisko
 
         private List<Tuple<string, int>> Convert(IBasket basket)
         {
-            throw new NotImplementedException();
+            throw new NotSupportedException();
+            return default(List<Tuple<string, int>>);
         }
     }
 

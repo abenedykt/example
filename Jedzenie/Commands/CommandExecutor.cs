@@ -1,4 +1,5 @@
-﻿using Food.Abstract;
+﻿using System;
+using Food.Abstract;
 
 namespace Food.Commands
 {
@@ -6,7 +7,17 @@ namespace Food.Commands
     {
         public void Execute(ICommand command)
         {
-            command.Execute();
+            Console.WriteLine($"executing command {command.GetType().Name}");
+
+            try
+            {
+                command.Execute();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"exception in {command.GetType().Name}");
+                Console.WriteLine(e);
+            }
         }
     }
 }

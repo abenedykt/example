@@ -1,6 +1,7 @@
 using System.Collections.Generic;
+using Food.Abstract;
 
-namespace Food.Abstract
+namespace Food
 {
     internal class Basket : IBasket
     {

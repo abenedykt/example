@@ -43,7 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\AbstractFactory.cs" />
-    <Compile Include="Abstract\Basket.cs" />
+    <Compile Include="Basket.cs" />
     <Compile Include="Abstract\IBasket.cs" />
     <Compile Include="Abstract\IBasketVerifier.cs" />
     <Compile Include="Abstract\IOrderer.cs" />
