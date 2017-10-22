@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Food.Abstract;
 using Food.Commands;
+using Food.Kantyna;
 
 namespace Food
 {
@@ -9,15 +10,20 @@ namespace Food
     {
         static void Main()
         {
+            var factory = new Factory();
+            var licence = factory.GetLicenceChain();
+
+            licence.Validate("mylicence.txt");
+
             Console.WriteLine("Gdzie jemy?");
             var place = Console.ReadLine();
             var f = new FlighweightFactory();
-            var factory = f.CreateFactory(place);
+            var abstractFactory = f.CreateFactory(place);
 
-            var menu = factory.GetMenu();
+            var menu = abstractFactory.GetMenu();
             ShowMenu(menu.Items);
 
-            var basket = factory.CreateBasket();
+            var basket = abstractFactory.CreateBasket();
 
             var executor = new CommandExecutor();
             executor.Execute(new CommandAddMenuItem(basket, menu.GetItem(0)));
@@ -26,15 +32,24 @@ namespace Food
             executor.Execute(new CommandAddMenuItem(basket, menu.GetItem(0)));
             executor.Execute(new CommandAddMenuItem(basket, menu.GetItem(2)));
 
-            ;
+            KantynaMenuItem pizza = menu.GetItem(2) as KantynaMenuItem;
+            NaGrubym pizzaNaGrubym = new NaGrubym();
+            
+            pizzaNaGrubym.SetComponent(pizza);
+            KantynaMenuItem naGrubym = pizzaNaGrubym;
+            executor.Execute(new CommandAddMenuItem(basket, pizzaNaGrubym));
+            
+            var veryfier = abstractFactory.GetVerifier();
+            
+            
+            //LSP
 
 
-            var veryfier = factory.GetVerifier();
             if (veryfier.Verify(basket))
             {
                 Console.WriteLine("można zamówić :)");
 
-                executor.Execute(new CommandOrder(factory.GetOrderer(), basket));
+                executor.Execute(new CommandOrder(abstractFactory.GetOrderer(), basket));
             }
             else
             {
@@ -49,23 +64,6 @@ namespace Food
             {
                 Console.WriteLine(item);
             }
-        }
-    }
-
-    internal class CommandOrder : ICommand
-    {
-        private readonly IOrderer _order;
-        private readonly IBasket _basket;
-
-        public CommandOrder(IOrderer order, IBasket basket)
-        {
-            _order = order;
-            _basket = basket;
-        }
-
-        public void Execute()
-        {
-            _order.Order(_basket);
         }
     }
 }

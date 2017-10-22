@@ -4,14 +4,22 @@ namespace Food.Kantyna
 {
     public class KantynaMenuItem : IMenuItem
     {
-        public KantynaMenuItem(int number, string name)
+        private readonly double _price;
+
+        public KantynaMenuItem(int number, string name, double price)
         {
+            _price = price;
             Number = number;
             Name = name;
         }
 
-        public int Number { get; }
-        public string Name { get; }
+        public virtual int Number { get; }
+        public virtual string Name { get; }
+
+        public virtual double Price()
+        {
+            return _price;
+        }
 
         public override string ToString()
         {

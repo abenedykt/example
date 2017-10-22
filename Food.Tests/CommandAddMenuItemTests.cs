@@ -1,4 +1,5 @@
-﻿using Food.Abstract;
+﻿using System;
+using Food.Abstract;
 using Food.Commands;
 using NSubstitute;
 using Xunit;
@@ -69,4 +70,36 @@ namespace Food.Tests
     }
 
 
+    public class PersonTests
+    {
+        [Theory,
+            InlineData("Arek", "", "Arek"),
+            InlineData("", "Benedykt", "Benedykt"),
+            InlineData("Arek", "Benedykt", "Arek Benedykt"),
+            ]
+        public void Person_returns_name_and_suname(string name, string surname, string expected)
+        {
+            var p = new Person
+            {
+                Name = name,
+                Surname = surname
+            };
+
+            Assert.Equal(expected, p.ToString());
+        }
+    }
+
+    public class Person
+    {
+        public string Name { get; set; }
+
+        public string Surname { get; set; }
+
+        public DateTime BirthDate { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Name} {Surname}".Trim();
+        }
+    }
 }

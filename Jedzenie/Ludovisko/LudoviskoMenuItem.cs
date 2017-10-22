@@ -4,8 +4,11 @@ namespace Food.Ludovisko
 {
     internal class LudoviskoMenuItem : IMenuItem
     {
-        public LudoviskoMenuItem(int number, string name)
+        private readonly double _price;
+
+        public LudoviskoMenuItem(int number, string name, double price)
         {
+            _price = price;
             Number = number;
             Name = name;
         }
@@ -16,6 +19,11 @@ namespace Food.Ludovisko
         public override string ToString()
         {
             return $"{Number} {Name}";
+        }
+
+        public double Price()
+        {
+            return _price;
         }
     }
 }

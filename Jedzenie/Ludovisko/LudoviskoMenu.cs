@@ -8,9 +8,9 @@ namespace Food.Ludovisko
     {
         public List<IMenuItem> Items => new List<IMenuItem>
         {
-            new LudoviskoMenuItem(1, "Fit"),
-            new LudoviskoMenuItem(2, "Vege"),
-            new LudoviskoMenuItem(3, "Standard")
+            new LudoviskoMenuItem(1, "Fit", 40),
+            new LudoviskoMenuItem(2, "Vege", 45),
+            new LudoviskoMenuItem(3, "Standard", 20)
         };
 
         public IMenuItem GetItem(int number)

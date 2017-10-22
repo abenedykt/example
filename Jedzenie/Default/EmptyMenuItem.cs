@@ -6,5 +6,9 @@ namespace Food.Default
     {
         public int Number { get; }
         public string Name { get; }
+        public double Price()
+        {
+            return 0;
+        }
     }
 }

@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -47,6 +50,7 @@
     <Compile Include="Abstract\IBasket.cs" />
     <Compile Include="Abstract\IBasketVerifier.cs" />
     <Compile Include="Abstract\IOrderer.cs" />
+    <Compile Include="Commands\CommandOrder.cs" />
     <Compile Include="Commands\CommandAddMenuItem.cs" />
     <Compile Include="Commands\CommandEmptyBasket.cs" />
     <Compile Include="Commands\CommandExecutor.cs" />
@@ -58,11 +62,14 @@
     <Compile Include="Abstract\IMenu.cs" />
     <Compile Include="Abstract\IMenuItem.cs" />
     <Compile Include="Abstract\ICommand.cs" />
+    <Compile Include="Abstract\Decorator.cs" />
     <Compile Include="Kantyna\KantynaBasketVerifier.cs" />
     <Compile Include="Kantyna\KantynaFactory.cs" />
     <Compile Include="Kantyna\KantynaMenuItem.cs" />
     <Compile Include="Default\NullableFactory.cs" />
     <Compile Include="Kantyna\KantynaOrderer.cs" />
+    <Compile Include="Kantyna\MixedVeryfier.cs" />
+    <Compile Include="Kantyna\NaGrubym.cs" />
     <Compile Include="Ludovisko\LudoviskoBasketVeryfier.cs" />
     <Compile Include="Ludovisko\LudoviskoFactory.cs" />
     <Compile Include="Ludovisko\LudoviskoMenu.cs" />
@@ -72,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
